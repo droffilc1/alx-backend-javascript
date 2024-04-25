@@ -1,6 +1,9 @@
-import { listOfStudents } from './9-hoisting';
+import listOfStudents from "./9-hoisting";
 
-console.log(listOfStudents); // Check if this outputs the expected array
+console.log(listOfStudents);
 
-const listPrinted = listOfStudents.map((student) => student.fullStudentDescription);
-console.log(listPrinted);
+const listPrinted = listOfStudents.map(
+  student => student.fullStudentDescription
+);
+
+console.log(listPrinted)
