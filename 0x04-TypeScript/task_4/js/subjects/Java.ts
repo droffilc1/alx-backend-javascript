@@ -2,7 +2,7 @@
 /// <reference path="./Subject.ts" />
 
 namespace Subjects {
-  interface Teacher {
+  export interface Teacher {
     experienceTeachingJava?: number;
   }
 
@@ -12,7 +12,7 @@ namespace Subjects {
     }
 
     public getAvailableTeacher(): string {
-      if (this.teacher && this.teacher.experienceTeachingJava) {
+      if (this.teacher && this.teacher.experienceTeachingJava > 0) {
         return `Available Teacher: ${this.teacher.firstName}`;
       } else {
         return 'No available teacher';

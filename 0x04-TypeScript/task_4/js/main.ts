@@ -6,7 +6,7 @@ const java = new Java();
 const react = new React();
 
 // Teacher Object
-const cTeacher: Teacher = {
+const cTeacher: Subjects.Teacher = {
   firstName: 'John',
   lastName: 'Doe',
   experienceTeachingC: 10,
