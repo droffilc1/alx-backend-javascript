@@ -76,11 +76,31 @@ function executeWork(employee: Teacher | Director): void {
   }
 }
 
+// String literal types
+type Subjects = 'Math' | 'History';
+
+/**
+ * @param todayClass
+ * @returns {string}
+ */
+
+function teachClass(todayClass: Subjects): string {
+  if(todayClass === 'Math') {
+    return 'Teaching Math';
+  } else {
+    return 'Teaching History';
+  }
+}
+
 console.log(createEmployee(200), Teacher);
 console.log(createEmployee(1000), Director);
 console.log(createEmployee('$500'), Director);
 console.log(executeWork(createEmployee(200)));
 console.log(executeWork(createEmployee(1000)));
+console.log(teachClass('Math'));
+console.log(teachClass('History'));
+
+
 
 
 
