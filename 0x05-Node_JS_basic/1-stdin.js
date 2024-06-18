@@ -8,9 +8,7 @@
  *  When the user ends the program, it should display This important software
  *  is now closing (followed by a new line)
  */
-process.stdin.setEncoding('utf-8');
-
-process.stdout.write('Welcome to Holberton School, what is your name? \n');
+console.log('Welcome to Holberton School, what is your name?');
 
 process.stdin.on('readable', () => {
   const chunk = process.stdin.read();
@@ -20,5 +18,5 @@ process.stdin.on('readable', () => {
 });
 
 process.stdin.on('end', () => {
-  process.stdout.write('This important software is now closing \n');
+  console.log('This important software is now closing');
 });
