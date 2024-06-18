@@ -10,6 +10,8 @@ module.exports = async function countStudents(filepath) {
     const numberOfStudents = lines.length - 1;
     console.log(`Number of students: ${numberOfStudents}`);
 
+    const result = [`Number of students: ${numberOfStudents}`];
+
     const students = lines.slice(1).map((line) => line.split(','));
     const fields = {};
 
@@ -24,9 +26,14 @@ module.exports = async function countStudents(filepath) {
     });
 
     for (const [field, firstNames] of Object.entries(fields)) {
-      console.log(`Number of students in ${field}: ${firstNames.length}. List: ${firstNames.join(', ')}`);
+      const logMessage = `Number of students in ${field}: ${firstNames.length}. List: ${firstNames.join(', ')}`;
+      console.log(logMessage);
+      result.push(logMessage);
     }
+
+    return result;
   } catch (err) {
+    console.error('Error:', err.message);
     throw new Error('Cannot load the database');
   }
 };
