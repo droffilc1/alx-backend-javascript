@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /**
  * a program named 1-stdin.js that will be executed through command line
  * It should display the message Welcome to Holberton School,
