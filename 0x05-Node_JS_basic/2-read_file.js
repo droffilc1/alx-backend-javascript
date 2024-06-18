@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Reads a file synchronously with Node JS
-const fs = require('node:fs');
-const path = require('node:path');
+const fs = require('fs');
+const path = require('path');
 
 module.exports = function countStudents(filepath) {
   try {

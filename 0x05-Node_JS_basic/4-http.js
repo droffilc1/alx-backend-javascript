@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Creates a small HTTP server using Node's HTTP module
-const http = require('node:http');
+const http = require('http');
 
 const hostName = '127.0.0.1';
 const port = 1245;

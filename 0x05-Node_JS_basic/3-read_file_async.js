@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Reading a file asynchronously with Node JS
-const fs = require('node:fs').promises;
-const path = require('node:path');
+const fs = require('fs').promises;
+const path = require('path');
 
 module.exports = async function countStudents(filepath) {
   try {
