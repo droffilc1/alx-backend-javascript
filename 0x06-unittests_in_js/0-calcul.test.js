@@ -3,7 +3,7 @@ const assert = require('assert');
 const calculateNumber = require('./0-calcul');
 
 describe('calculateNumber', () => {
-  it('should return sum of two numbers rounded', function () {
+  it('should return sum of two numbers rounded', () => {
     assert.strictEqual(calculateNumber(1, 3), 4);
     assert.strictEqual(calculateNumber(1, 3.7), 5);
     assert.strictEqual(calculateNumber(1.2, 3.7), 5);
