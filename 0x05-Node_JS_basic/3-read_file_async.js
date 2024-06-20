@@ -8,6 +8,7 @@ module.exports = async function countStudents(filepath) {
     const data = await fs.readFile(path.resolve(filepath), 'utf8');
     const lines = data.split('\n').filter((line) => line.trim() !== '');
     const numberOfStudents = lines.length - 1;
+    console.log(`Number of students: ${numberOfStudents}`);
 
     const result = [`Number of students: ${numberOfStudents}`];
 
@@ -26,6 +27,7 @@ module.exports = async function countStudents(filepath) {
 
     for (const [field, firstNames] of Object.entries(fields)) {
       const logMessage = `Number of students in ${field}: ${firstNames.length}. List: ${firstNames.join(', ')}`;
+      console.log(logMessage);
       result.push(logMessage);
     }
 
