@@ -1,7 +1,7 @@
 // Stubs
 const sinon = require('sinon');
 const Utils = require('./utils');
-const sendPaymentRequestToApi = require('./3-payment');
+const sendPaymentRequestToApi = require('./4-payment');
 
 describe('sendPaymentRequestToApi', () => {
   let calculateNumberStub;
@@ -12,6 +12,9 @@ describe('sendPaymentRequestToApi', () => {
     consoleLogSpy = sinon.spy(console, 'log');
   });
 
+  afterEach(() => {
+    sinon.restore();
+  });
 
   it('should verify that calculateNumber was called once with the correct arguments', () => {
     sendPaymentRequestToApi(100, 20);
@@ -23,9 +26,5 @@ describe('sendPaymentRequestToApi', () => {
     // Verify that console.log was called with the correct message
     sinon.assert.calledOnce(consoleLogSpy);
     sinon.assert.calledOnceWithExactly(consoleLogSpy, 'The total is: 10');
-  });
-
-  afterEach(() => {
-    sinon.restore();
   });
 });

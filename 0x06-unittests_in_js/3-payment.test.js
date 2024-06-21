@@ -10,14 +10,14 @@ describe('sendPaymentRequestToApi', () => {
     calculateNumberSpy = sinon.spy(Utils, 'calculateNumber');
   });
 
+  afterEach(() => {
+    sinon.restore();
+  });
+
   it('should call calculateNumber with correct arguments', () => {
     sendPaymentRequestToApi(100, 20);
     sinon.assert.calledOnce(calculateNumberSpy);
     sinon.assert.calledWith(calculateNumberSpy, 'SUM', 100, 20);
-  });
-
-  afterEach(() => {
-    sinon.restore();
   });
 });
 
