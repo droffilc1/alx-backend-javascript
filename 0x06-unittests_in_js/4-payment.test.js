@@ -15,14 +15,14 @@ describe('sendPaymentRequestToApi', () => {
 
   it('should verify that calculateNumber was called once with the correct arguments', () => {
     sendPaymentRequestToApi(100, 20);
-    sinon.assert.calledOnce(calculateNumberStub);
-    sinon.assert.calledWith(calculateNumberStub, 'SUM', 100, 20);
-  });
 
-  it('should verify that console.log was called with the correct message', () => {
-    sendPaymentRequestToApi(100, 20);
+    // verify that calculateNumber was called once with the correct arguments
+    sinon.assert.calledOnce(calculateNumberStub);
+    sinon.assert.calledOnceWithExactly(calculateNumberStub, 'SUM', 100, 20);
+
+    // Verify that console.log was called with the correct message
     sinon.assert.calledOnce(consoleLogSpy);
-    sinon.assert.calledWith(consoleLogSpy, 'The total is: 10');
+    sinon.assert.calledOnceWithExactly(consoleLogSpy, 'The total is: 10');
   });
 
   afterEach(() => {
